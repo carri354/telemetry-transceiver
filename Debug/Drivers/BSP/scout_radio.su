@@ -1,0 +1,7 @@
+../Drivers/BSP/scout_radio.c:12:9:scout_radio_init	8	static
+../Drivers/BSP/scout_radio.c:20:9:scout_radio_DeInit	8	static
+../Drivers/BSP/scout_radio.c:29:9:scout_radio_ConfigRFSwitch	16	static
+../Drivers/BSP/scout_radio.c:46:9:scout_radio_GetTxConfig	4	static
+../Drivers/BSP/scout_radio.c:50:9:scout_radio_IsTCXO	4	static
+../Drivers/BSP/scout_radio.c:55:9:scout_radio_IsDCDC	4	static
+../Drivers/BSP/scout_radio.c:60:9:scout_radio_GetRFOMaxPowerConfig	4	static

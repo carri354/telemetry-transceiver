@@ -1,0 +1,5 @@
+../Core/Src/gps.c:21:6:gps_init	32	static
+../Core/Src/gps.c:63:6:gps_get_version	16	static
+../Core/Src/gps.c:80:6:gps_poll_pvt	16	static
+../Core/Src/gps.c:115:6:ubx_send_message	24	static
+../Core/Src/gps.c:133:6:ubx_receive_message	16	static

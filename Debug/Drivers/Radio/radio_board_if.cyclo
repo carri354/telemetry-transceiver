@@ -1,0 +1,7 @@
+../Drivers/Radio/radio_board_if.c:59:9:RBI_Init	1
+../Drivers/Radio/radio_board_if.c:85:9:RBI_DeInit	1
+../Drivers/Radio/radio_board_if.c:111:9:RBI_ConfigRFSwitch	5
+../Drivers/Radio/radio_board_if.c:153:9:RBI_GetTxConfig	1
+../Drivers/Radio/radio_board_if.c:179:9:RBI_IsTCXO	1
+../Drivers/Radio/radio_board_if.c:205:9:RBI_IsDCDC	1
+../Drivers/Radio/radio_board_if.c:231:9:RBI_GetRFOMaxPowerConfig	1
