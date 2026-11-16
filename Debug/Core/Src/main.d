@@ -29,13 +29,25 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_bus.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_rcc_ex.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_exti.h \
+ ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_rtc.h \
+ ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_rtc_ex.h \
+ ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_spi.h \
+ ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_spi_ex.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_subghz.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_spi.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_uart.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_uart_ex.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_system.h \
- ../Core/Inc/subghz.h ../Core/Inc/main.h ../Core/Inc/usart.h \
- ../Core/Inc/gpio.h
+ ../Core/Inc/rtc.h ../Core/Inc/main.h ../Core/Inc/spi.h \
+ ../Core/Inc/subghz.h ../Core/Inc/usart.h ../Core/Inc/gpio.h \
+ ../Core/Inc/evclib.h ../Core/Inc/usart.h ../Core/Inc/gps.h \
+ ../Core/Inc/lora.h ../Drivers/Radio/radio_driver.h \
+ ../Drivers/Radio/radio_conf.h \
+ ../Drivers/Radio/../../Utils/misc/stm32_mem.h \
+ ../Drivers/Radio/../../Utils/misc/../conf/utilities_conf.h \
+ ../Drivers/CMSIS/Include/cmsis_compiler.h \
+ ../Drivers/Radio/radio_board_if.h ../Drivers/Radio/../BSP/scout_radio.h \
+ ../Drivers/Radio/../BSP/scout_conf.h ../Core/Inc/mcp2515.h
 ../Core/Inc/main.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal.h:
 ../Core/Inc/stm32wlxx_hal_conf.h:
@@ -67,12 +79,31 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_bus.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_rcc_ex.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_exti.h:
+../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_rtc.h:
+../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_rtc_ex.h:
+../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_spi.h:
+../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_spi_ex.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_subghz.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_spi.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_uart.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_uart_ex.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_system.h:
-../Core/Inc/subghz.h:
+../Core/Inc/rtc.h:
 ../Core/Inc/main.h:
+../Core/Inc/spi.h:
+../Core/Inc/subghz.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/gpio.h:
+../Core/Inc/evclib.h:
+../Core/Inc/usart.h:
+../Core/Inc/gps.h:
+../Core/Inc/lora.h:
+../Drivers/Radio/radio_driver.h:
+../Drivers/Radio/radio_conf.h:
+../Drivers/Radio/../../Utils/misc/stm32_mem.h:
+../Drivers/Radio/../../Utils/misc/../conf/utilities_conf.h:
+../Drivers/CMSIS/Include/cmsis_compiler.h:
+../Drivers/Radio/radio_board_if.h:
+../Drivers/Radio/../BSP/scout_radio.h:
+../Drivers/Radio/../BSP/scout_conf.h:
+../Core/Inc/mcp2515.h:

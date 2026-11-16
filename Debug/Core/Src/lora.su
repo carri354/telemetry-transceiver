@@ -1,0 +1,7 @@
+../Core/Src/lora.c:15:6:lora_init	48	static
+../Core/Src/lora.c:48:6:lora_isr	16	static
+../Core/Src/lora.c:70:6:lora_setupTX	8	static
+../Core/Src/lora.c:80:6:lora_send	16	static
+../Core/Src/lora.c:94:6:lora_setupRX	8	static
+../Core/Src/lora.c:105:6:lora_startContinuousRx	16	static
+../Core/Src/lora.c:119:9:lora_receive	24	static

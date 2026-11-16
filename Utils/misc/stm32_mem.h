@@ -26,7 +26,7 @@ extern "C"
 #endif
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
-#include "utilities_conf.h"
+#include "../conf/utilities_conf.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/

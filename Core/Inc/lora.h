@@ -10,6 +10,7 @@
 
 #include "radio_driver.h"
 
+#define LORA_TIMEOUT (uint8_t)64000
 
 typedef enum{
 	TX_NULL, // Unitialized

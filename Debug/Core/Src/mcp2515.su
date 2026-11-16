@@ -1,0 +1,10 @@
+../Core/Src/mcp2515.c:21:14:MCP_ReadStatus	32	static
+../Core/Src/mcp2515.c:37:14:MCP_ReadRegister	32	static
+../Core/Src/mcp2515.c:53:14:MCP_WriteRegister	24	static
+../Core/Src/mcp2515.c:64:14:MCP_BitModify	24	static
+../Core/Src/mcp2515.c:75:14:MCP_Reset	16	static
+../Core/Src/mcp2515.c:86:14:MCP_InitBitTiming	16	static
+../Core/Src/mcp2515.c:103:14:MCP_ChangeModes	24	static
+../Core/Src/mcp2515.c:141:14:MCP_Init	16	static
+../Core/Src/mcp2515.c:169:21:MCP_ReadSingleRxBuffer	56	static
+../Core/Src/mcp2515.c:185:14:MCP_ReadRxBuffer	32	static
