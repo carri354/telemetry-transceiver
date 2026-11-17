@@ -38,7 +38,8 @@ Core/Src/mcp2515.o: ../Core/Src/mcp2515.c ../Core/Inc/mcp2515.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_uart.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_uart_ex.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_system.h \
- ../Core/Inc/gpio.h ../Core/Inc/main.h ../Core/Inc/spi.h \
+ ../Drivers/BSP/scout_conf.h ../Core/Inc/gpio.h ../Core/Inc/main.h \
+ ../Core/Inc/spi.h \
  ../Drivers/CMSIS/Device/ST/STM32WLxx/Include/stm32wl55xx.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_def.h
 ../Core/Inc/mcp2515.h:
@@ -82,6 +83,7 @@ Core/Src/mcp2515.o: ../Core/Src/mcp2515.c ../Core/Inc/mcp2515.h \
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_uart.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_uart_ex.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_system.h:
+../Drivers/BSP/scout_conf.h:
 ../Core/Inc/gpio.h:
 ../Core/Inc/main.h:
 ../Core/Inc/spi.h:

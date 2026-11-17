@@ -47,7 +47,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/Radio/../../Utils/misc/../conf/utilities_conf.h \
  ../Drivers/CMSIS/Include/cmsis_compiler.h \
  ../Drivers/Radio/radio_board_if.h ../Drivers/Radio/../BSP/scout_radio.h \
- ../Drivers/Radio/../BSP/scout_conf.h ../Core/Inc/mcp2515.h
+ ../Drivers/Radio/../BSP/scout_conf.h ../Core/Inc/mcp2515.h \
+ ../Drivers/BSP/scout_conf.h
 ../Core/Inc/main.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal.h:
 ../Core/Inc/stm32wlxx_hal_conf.h:
@@ -107,3 +108,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/Radio/../BSP/scout_radio.h:
 ../Drivers/Radio/../BSP/scout_conf.h:
 ../Core/Inc/mcp2515.h:
+../Drivers/BSP/scout_conf.h:

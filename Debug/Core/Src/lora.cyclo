@@ -1,7 +1,7 @@
 ../Core/Src/lora.c:15:6:lora_init	1
-../Core/Src/lora.c:48:6:lora_isr	4
-../Core/Src/lora.c:70:6:lora_setupTX	1
-../Core/Src/lora.c:80:6:lora_send	2
-../Core/Src/lora.c:94:6:lora_setupRX	1
-../Core/Src/lora.c:105:6:lora_startContinuousRx	2
-../Core/Src/lora.c:119:9:lora_receive	1
+../Core/Src/lora.c:48:6:lora_isr	5
+../Core/Src/lora.c:72:6:lora_setupTX	1
+../Core/Src/lora.c:82:6:lora_send	2
+../Core/Src/lora.c:96:6:lora_setupRX	1
+../Core/Src/lora.c:109:6:lora_startContinuousRx	2
+../Core/Src/lora.c:123:9:lora_receive	2

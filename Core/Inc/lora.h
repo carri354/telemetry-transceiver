@@ -48,7 +48,7 @@ void lora_send();
  * @assumes lora_init has already been called
  */
 void lora_setupRX();
-void lora_startContinuousRx(uint8_t timeout);
+void lora_startContinuousRx(uint32_t timeout);
 uint8_t lora_receive(uint8_t *buffer, uint8_t *size, uint8_t maxSize);
 
 #endif /* INC_LORA_H_ */

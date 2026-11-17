@@ -6,6 +6,11 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "scout_conf.h"
+
+#define SPI_CS_PIN SPI1_CS_Pin
+#define SPI_CS_PORT SPI1_CS_GPIO_Port
+
 /* request bytes */
 #define READ_STAT 0xA0
 #define CANSTAT_OPMOD_MASK 0xE0 // used to mask for current op mode from CANSTAT

@@ -57,6 +57,7 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define APB1TIM_CLK_MHz 32
 #define SP1_CS_Pin GPIO_PIN_8
 #define SP1_CS_GPIO_Port GPIOB
 #define CAN_INT_N_Pin GPIO_PIN_0

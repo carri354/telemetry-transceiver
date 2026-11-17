@@ -73,7 +73,7 @@ void DBG(const char* type, const char* tag, char *c, ...)
 				break;
 			}
 
-			char str[12];
+			char str[12] = {0};
 			s = (uint8_t*)&str[0];
 
 			switch(*c)
@@ -88,6 +88,9 @@ void DBG(const char* type, const char* tag, char *c, ...)
 					sprintf(str, "%X", va_arg(lst, int));
 					break;
 				// Add more cases here (%f, %c, etc.)
+				case 's':
+					s = va_arg(lst, uint8_t*);
+					break;
 			}
 
 			// Print formated string

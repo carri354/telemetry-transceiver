@@ -24,9 +24,9 @@ MCP_Status_t MCP_ReadStatus(uint8_t * result) {
     uint8_t tx[2] = {MCP_INST_READ_STATUS, 0x00};
     uint8_t rx[2] = {0};
 
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_RESET);
     HAL_StatusTypeDef status = HAL_SPI_TransmitReceive(&hspi1, tx, rx, 2, 100);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_SET);
 
     if (status != HAL_OK) return MCP_SPI_ERROR;
 
@@ -40,9 +40,9 @@ MCP_Status_t MCP_ReadRegister(uint8_t address, uint8_t * result) {
     uint8_t tx[3] = {MCP_INST_READ, address, 0x00};
     uint8_t rx[3] = {0};
 
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_RESET);
     HAL_StatusTypeDef status = HAL_SPI_TransmitReceive(&hspi1, tx, rx, 3, 100);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_SET);
 
     if (status != HAL_OK) return MCP_SPI_ERROR;
 
@@ -53,9 +53,9 @@ MCP_Status_t MCP_ReadRegister(uint8_t address, uint8_t * result) {
 MCP_Status_t MCP_WriteRegister(uint8_t address, uint8_t data) {
     uint8_t tx[3] = {MCP_INST_WRITE, address, data};
 
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_RESET);
     HAL_StatusTypeDef status = HAL_SPI_Transmit(&hspi1, tx, 3, 100);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_SET);
 
     if (status != HAL_OK) return MCP_SPI_ERROR;
     return MCP_OK;
@@ -64,9 +64,9 @@ MCP_Status_t MCP_WriteRegister(uint8_t address, uint8_t data) {
 MCP_Status_t MCP_BitModify(uint8_t address, uint8_t data, uint8_t mask) {
     uint8_t tx[4] = {MCP_INST_BIT_MODIFY, address, mask, data & mask};
 
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_RESET);
     HAL_StatusTypeDef status = HAL_SPI_Transmit(&hspi1, tx, 4, 100);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_SET);
 
     if (status != HAL_OK) return MCP_SPI_ERROR;
     return MCP_OK;
@@ -75,9 +75,9 @@ MCP_Status_t MCP_BitModify(uint8_t address, uint8_t data, uint8_t mask) {
 MCP_Status_t MCP_Reset(void) {
     uint8_t tx = 0xC0;
 
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_RESET);
     HAL_StatusTypeDef status = HAL_SPI_Transmit(&hspi1, &tx, 1, 100);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_SET);
 
     if (status != HAL_OK) return MCP_SPI_ERROR;
     return MCP_OK;
@@ -173,9 +173,9 @@ static MCP_Status_t MCP_ReadSingleRxBuffer(uint8_t inst, uint8_t * buffer) {
     uint8_t rx[14] = {0};
 
     tx[0] = inst;
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_RESET);
     HAL_StatusTypeDef status = HAL_SPI_TransmitReceive(&hspi1, tx, rx, 14, 100);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_SET);
 
     if (status != HAL_OK) return MCP_SPI_ERROR;
     memcpy(buffer, &rx[1], 13);

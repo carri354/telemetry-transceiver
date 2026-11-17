@@ -34,7 +34,7 @@ void lora_init(RadioLoRaSpreadingFactors_t SpreadingFactor, RadioLoRaBandwidths_
 
 
 	PacketParams.PacketType = PACKET_TYPE_LORA;
-	PacketParams.Params.LoRa.CrcMode = LORA_CRC_ON;
+	PacketParams.Params.LoRa.CrcMode = LORA_CRC_OFF;
 	PacketParams.Params.LoRa.PayloadLength = 0;
 	// Convenience for testing
 	PacketParams.Params.LoRa.HeaderType = LORA_PACKET_FIXED_LENGTH;
@@ -48,10 +48,12 @@ void lora_init(RadioLoRaSpreadingFactors_t SpreadingFactor, RadioLoRaBandwidths_
 void lora_isr( RadioIrqMasks_t irq){
 	if(IRQ_TX_DONE & irq){
 		lora_tx_state = TX_READY;
+		DBG(DBG_MAIN, DBG_I, "TX Done");
 	}
 
 	if(IRQ_RX_DONE & irq){
-
+		lora_rx_state = RX_READY;
+		DBG(DBG_MAIN, DBG_I, "RX Done");
 	}
 
 	if(IRQ_RX_TX_TIMEOUT & irq){
@@ -73,7 +75,7 @@ void lora_setupTX(){
 
 	PacketParams.Params.LoRa.PayloadLength = 0;
 	SUBGRF_SetPacketParams(&PacketParams);
-
+	SUBGRF_SetDioIrqParams(IRQ_TX_DONE | IRQ_RX_TX_TIMEOUT, IRQ_TX_DONE | IRQ_RX_TX_TIMEOUT, 0, 0);
 	lora_tx_state = TX_READY;
 }
 
@@ -98,11 +100,13 @@ void lora_setupRX(){
 
 	PacketParams.Params.LoRa.PayloadLength = 0xFF;
 	SUBGRF_SetPacketParams(&PacketParams);
-
+	 SUBGRF_SetDioIrqParams(IRQ_RX_DONE | IRQ_RX_TX_TIMEOUT | IRQ_CRC_ERROR | IRQ_HEADER_ERROR,
+	                          IRQ_RX_DONE | IRQ_RX_TX_TIMEOUT | IRQ_CRC_ERROR | IRQ_HEADER_ERROR,
+	                          IRQ_RADIO_NONE, IRQ_RADIO_NONE);
 	lora_rx_state = RX_READY;
 }
 
-void lora_startContinuousRx(uint8_t timeout){
+void lora_startContinuousRx(uint32_t timeout){
 	// For now, we assume we are just sending 8 byte messages
 	if(lora_rx_state != RX_READY){
 		DBG(DBG_MAIN, DBG_E, "LoRa RX is not ready!");
@@ -117,6 +121,11 @@ void lora_startContinuousRx(uint8_t timeout){
 }
 
 uint8_t lora_receive(uint8_t *buffer, uint8_t *size, uint8_t maxSize){
-
-	return SUBGRF_GetPayload(buffer, size, maxSize);
+	if(lora_rx_state != RX_READY){
+		return 2;
+	}
+	uint8_t status = SUBGRF_GetPayload(buffer, size, maxSize);
+	lora_rx_state = RX_BUSY;
+	SUBGRF_SetRx(0xFFFFFF);   // re-arm; 0xFFFFFF = continuous
+	return status;
 }
